@@ -1,5 +1,11 @@
 UserAuth::Application.routes.draw do
 
+  resources :questions
+
+  resources :assignment_questions
+
+  resources :assignments
+
   resources :students
 
   resources :instructors
@@ -18,6 +24,16 @@ UserAuth::Application.routes.draw do
   match "home", :to => "sessions#home"
   match "profile", :to => "sessions#profile"
   match "setting", :to => "sessions#setting"
+  
+  match "/assignments/:course_data" => "assignments#index"
+  # match "/assignments/course_data" => "assignments#index"
+  
+  match "/teaching_courses/:course_data" => "teaching_courses#create"#"assignments#index"
+  # match "/teaching_courses/course_data" => "sessions#login"#"assignments#index"
+  
+  # match "/teaching_courses/assignments/:course_data" => "assignments#index"
+  # match "/teaching_courses/assignments/course_data" => "assignments#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

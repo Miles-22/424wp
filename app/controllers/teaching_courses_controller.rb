@@ -2,7 +2,7 @@ class TeachingCoursesController < ApplicationController
   # GET /teaching_courses
   # GET /teaching_courses.json
   def index
-    @teaching_courses = TeachingCourse.all
+    # @teaching_courses = TeachingCourse.all
 	
 	@teaching_courses = TeachingCourse.where(:instructor => session[:user_id].to_s)
 	

@@ -1,4 +1,4 @@
-<h1>Listing teaching_courses</h1>
+<h1>Courses Currently Teaching</h1>
 
 <table>
   <tr>
@@ -17,8 +17,8 @@
     <td><%= teaching_course.semester %></td>
     <td><%= link_to 'Show', teaching_course %></td>
     <td><%= link_to 'Edit', edit_teaching_course_path(teaching_course) %></td>
-    <td><%= link_to 'Destroy', teaching_course, confirm: 'Are you sure?', method: :delete %></td>
-	<td><%= link_to 'Destroy', teaching_course, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Destroy', teaching_course, confirm: 'Are you sure?', method: :delete %></td>, {:style=>'color:#0000F1;', class: "nav_links"}
+	<td><%= link_to "Assignments" , assignments_path({:course_data => teaching_course})   %> </td>
   </tr>
 <% end %>
 </table>

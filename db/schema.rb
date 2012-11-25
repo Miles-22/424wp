@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121114014529) do
+ActiveRecord::Schema.define(:version => 20121124192829) do
+
+  create_table "assignment_questions", :force => true do |t|
+    t.string   "question_number"
+    t.string   "assignment_number"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "assignments", :force => true do |t|
+    t.string   "assignment_number"
+    t.string   "due_date"
+    t.string   "description"
+    t.string   "date_assigned"
+    t.string   "assignment_name"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "course_number"
+  end
 
   create_table "enrollments", :force => true do |t|
     t.string   "department"
@@ -23,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20121114014529) do
     t.datetime "updated_at",     :null => false
   end
 
-  # NOT USED BUT CAN'T DROP TABLE.
   create_table "instructors", :force => true do |t|
     t.string   "instructor_number"
     t.datetime "created_at",        :null => false
@@ -31,7 +48,15 @@ ActiveRecord::Schema.define(:version => 20121114014529) do
     t.string   "user_id"
   end
 
-  # NOT USED BUT CAN'T DROP TABLE.
+  create_table "questions", :force => true do |t|
+    t.string   "hint"
+    t.string   "correct_answer"
+    t.string   "prompt"
+    t.string   "answer_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
   create_table "students", :force => true do |t|
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false

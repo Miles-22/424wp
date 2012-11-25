@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hint: MyString
+  correct_answer: MyString
+  prompt: MyString
+  answer_type: MyString
+
+two:
+  hint: MyString
+  correct_answer: MyString
+  prompt: MyString
+  answer_type: MyString
